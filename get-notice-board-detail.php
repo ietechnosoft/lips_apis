@@ -2,7 +2,7 @@
 	ob_start();
 	session_start();
 	$_SESSION['cursession'] = $_REQUEST['college_session'];
-	include_once("../../connect.php");
+	include_once("../../../connect.php");
 	$fees="fee_structure1";
 	$notice="notice1";
 	$col="LIPS";
@@ -58,7 +58,7 @@ body
 					// $str[$i]=str_replace("assets","assets_parents",$str[$i]);
 			?>
 			<tr>
-				<td colspan='2'><img src='<?php echo '../../'.$str[$i]; ?>' width='100%' style='max-height:800px;'/></td>
+				<td colspan='2'><img src='<?php echo '../../../'.$str[$i]; ?>' width='100%' style='max-height:800px;'/></td>
 			</tr>
 			<?php
 				}

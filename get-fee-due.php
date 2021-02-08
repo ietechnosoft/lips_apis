@@ -111,7 +111,7 @@
 											$p=mysqli_fetch_row(mysqli_query($con,"select name,fname,mname,sms,f_id,gender,admno,ledger_id,pic,nextduedate from $gdcol where s_id='$_REQUEST[s_id]'"));
 											$fee=mysqli_fetch_row(mysqli_query($con1,"select feefine from otherfee"));
 										?>
-										 <input type='hidden' name='s_id' value="<?php echo $_REQUEST[s_id]; ?>"/>
+										 <input type='hidden' name='s_id' value="<?php echo $_REQUEST['s_id']; ?>"/>
 										 <input type='hidden' name='admno' value="<?php echo $p[6]; ?>"/>
 										 <input type='hidden' name='name' value="<?php echo $p[0]; ?>"/>
 										 <input type='hidden' name='ledger_id' value="<?php echo $p[7]; ?>"/> 
