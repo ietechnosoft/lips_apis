@@ -7,7 +7,7 @@
 	else $Y=date("Y");
 	$_SESSION['cursession'] =	$Y."_".(substr($Y,2)+1);
 					
-    include_once("../../connect.php");
+    include_once("../../../connect.php");
     $gdcol="gdcol1";
     $_REQUEST['college'] = "gdcol1";
 

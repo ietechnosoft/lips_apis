@@ -2,7 +2,7 @@
 	ob_start();
 	session_start();
     $_SESSION['cursession'] = $_REQUEST['college_session'];
-    include_once("../../connect.php"); 
+    include_once("../../../connect.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +21,6 @@
         </style>
     </head>
     <body>
-        <iframe src='<?php echo '../../'.$_REQUEST['doc']; ?>' height='100%' width='100%'></iframe>
+        <iframe src='<?php echo '../../../'.$_REQUEST['doc']; ?>' height='100%' width='100%'></iframe>
     </body>
 </html>

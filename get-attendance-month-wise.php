@@ -2,7 +2,7 @@
 	ob_start();
 	session_start();
 	$_SESSION['cursession'] = $_REQUEST['college_session'];
-	include_once("../../connect.php");
+	include_once("../../../connect.php");
 	$fees="fee_structure1";		
 	$college="1";
 	$gdcol="gdcol1";
