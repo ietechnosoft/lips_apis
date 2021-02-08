@@ -6,6 +6,7 @@
 	$fees="fee_structure1";		
 	$college="1";
 	$gdcol="gdcol1";
+	
 
 	$RESPONCE = array();
 	$RESPONCE['result'] = "success";
