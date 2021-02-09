@@ -73,6 +73,7 @@
             
             if($chk=mysqli_fetch_row($chk1)) {
                 $l1=mysqli_query($con,"select s_id,name,f_id,sem,sem2,pic from $dbname.$_REQUEST[college] where  uname='" . $username . "' and password='" . $password . "'  and status=1");
+                
                 if($l=mysqli_fetch_row($l1)) {
 
                     $login['college_session'] = str_replace("_", "-", $_REQUEST['cursession']);
@@ -83,10 +84,16 @@
                     $login['sem2'] = $l[4];
                     $login['pic'] = $l[5];
                     $login['user_type'] = "1";
-                } 
+                } else {
+                    $RESPONSE['result'] = "fail";
+                    $RESPONSE['message'] = "Invalid Username or Password!!!";
+
+                    $login = null;
+                }
             } 
         }
     }
+
     $RESPONSE['data'] = $login;
 
     echo json_encode($RESPONSE);
