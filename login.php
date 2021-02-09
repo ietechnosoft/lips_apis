@@ -10,6 +10,7 @@
     include_once("../../../connect.php");
     $gdcol="gdcol1";
     $_REQUEST['college'] = "gdcol1";
+    $fees="fee_structure1";
 
     $username = md5($_REQUEST['username']);
     $password = md5($_REQUEST['password']);
@@ -45,6 +46,10 @@
                     $login['sem1'] = $l3[4];
                     $login['pic'] = $l3[5];
                     $login['user_type'] = "1";
+
+                    $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l3[2]'"));
+                    $login['course'] = "$f[0] - $f[1] - $f[2]";
+
                 } else {
                     $login['college_session'] = str_replace("_", "-", $_SESSION['cursession']);
                     $login['user_id'] = $l[0];
@@ -54,6 +59,9 @@
                     $login['sem2'] = $l[4];
                     $login['pic'] = $l[5];
                     $login['user_type'] = "1";
+
+                    $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l[2]'"));
+                    $login['course'] = "$f[0] - $f[1] - $f[2]";
                 }
             } else {
                 $login['college_session'] = str_replace("_", "-", $_SESSION['cursession']);
@@ -64,6 +72,9 @@
                 $login['sem2'] = $l[4];
                 $login['pic'] = $l[5];
                 $login['user_type'] = "1";
+
+                $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l[2]'"));
+                $login['course'] = "$f[0] - $f[1] - $f[2]";
             }
         } else {
             $str=explode("_", $_SESSION['cursession']);
@@ -87,6 +98,9 @@
                     $login['sem2'] = $l[4];
                     $login['pic'] = $l[5];
                     $login['user_type'] = "1";
+
+                    $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l[2]'"));
+                    $login['course'] = "$f[0] - $f[1] - $f[2]";
                 } else {
                     $RESPONSE['result'] = "fail";
                     $RESPONSE['message'] = "Invalid Username or Password!!!";
