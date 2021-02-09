@@ -48,7 +48,9 @@
                     $login['user_type'] = "1";
 
                     $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l3[2]'"));
-                    $login['course'] = "$f[0] - $f[1] - $f[2]";
+                    $login['batch'] = $f[0];
+                    $login['course'] = $f[1];
+                    $login['year'] = $f[2];
 
                 } else {
                     $login['college_session'] = str_replace("_", "-", $_SESSION['cursession']);
@@ -61,7 +63,9 @@
                     $login['user_type'] = "1";
 
                     $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l[2]'"));
-                    $login['course'] = "$f[0] - $f[1] - $f[2]";
+                    $login['batch'] = $f[0];
+                    $login['course'] = $f[1];
+                    $login['year'] = $f[2];
                 }
             } else {
                 $login['college_session'] = str_replace("_", "-", $_SESSION['cursession']);
@@ -74,7 +78,9 @@
                 $login['user_type'] = "1";
 
                 $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l[2]'"));
-                $login['course'] = "$f[0] - $f[1] - $f[2]";
+                    $login['batch'] = $f[0];
+                    $login['course'] = $f[1];
+                    $login['year'] = $f[2];
             }
         } else {
             $str=explode("_", $_SESSION['cursession']);
@@ -100,7 +106,9 @@
                     $login['user_type'] = "1";
 
                     $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$l[2]'"));
-                    $login['course'] = "$f[0] - $f[1] - $f[2]";
+                    $login['batch'] = $f[0];
+                    $login['course'] = $f[1];
+                    $login['year'] = $f[2];
                 } else {
                     $RESPONSE['result'] = "fail";
                     $RESPONSE['message'] = "Invalid Username or Password!!!";
