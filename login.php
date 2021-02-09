@@ -16,7 +16,7 @@
 
     $RESPONSE = array();
     $RESPONSE['result'] = "success";
-    $RESPONSE['login'] = array();
+    $RESPONSE['data'] = array();
     $login = array();
 
     $dbname="luckycollegeerp". $_SESSION['cursession'];
@@ -87,7 +87,7 @@
             } 
         }
     }
-    $RESPONSE['login'] = $login;
+    $RESPONSE['data'] = $login;
 
     echo json_encode($RESPONSE);
 ?>

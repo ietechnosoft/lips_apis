@@ -53,7 +53,9 @@
 
 							$str = explode("-",$str1[$k]);
 							$period_detail['subject_name'] = mysqli_fetch_row(mysqli_query($con,"select abbr from subject_list where s_id='$str[0]'"))[0];
-							$period_detail['faculty_name'] = mysqli_fetch_row(mysqli_query($con1,"select empname from emp_details where emp_id='$str[1]'"))[0];
+							$emp_detail = mysqli_fetch_row(mysqli_query($con1,"select empname,pic from emp_details where emp_id='$str[1]'"));
+							$period_detail['faculty_name'] = $emp_detail[0];
+							$period_detail['faculty_pic'] = $emp_detail[1];
 							$period_detail['class_name'] = mysqli_fetch_row(mysqli_query($con1,"select lname from location where l_id='$str[2]'"))[0];
 							array_push($day_detail['time_table_period'], $period_detail);
 					}
