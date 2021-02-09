@@ -20,7 +20,9 @@
     $login = array();
 
     $dbname="luckycollegeerp". $_SESSION['cursession'];
-    $chk1=mysqli_query($con,"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$dbname'");		
+    // echo "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$dbname'";
+    $chk1=mysqli_query($con,"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$dbname'");
+    //'luckycollegeerp2020_21'
     
     if($chk=mysqli_fetch_row($chk1)) {
         // echo "select s_id,name,f_id,sem,sem2,pic from $dbname.$_REQUEST[college] where uname='" . $username . "' and password='" . $password . "' and status=1";
@@ -69,6 +71,7 @@
             $str[1]++;
             $_SESSION['cursession']=$str[0]."_".$str[1];
             $dbname="luckycollegeerp". $_SESSION['cursession'];
+            // echo "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$dbname'";
             $chk1=mysqli_query($con,"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$dbname'");		
             
             if($chk=mysqli_fetch_row($chk1)) {
@@ -90,8 +93,18 @@
 
                     $login = null;
                 }
-            } 
+            } else {
+                $RESPONSE['result'] = "fail";
+                $RESPONSE['message'] = "Invalid Username or Password!!!";
+
+                $login = null;
+            }
         }
+    } else {
+        $RESPONSE['result'] = "fail";
+        $RESPONSE['message'] = "Session not created yet";
+
+        $login = null;
     }
 
     $RESPONSE['data'] = $login;
