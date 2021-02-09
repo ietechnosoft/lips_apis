@@ -6,6 +6,11 @@
     $gdcol="gdcol1";
     $type="1";
 
+if ($_REQUEST['college_id'] == "2") {
+	$gdcol = "gdcol2";
+	$type = "2";
+}
+
     $RESPONSE = array();
     $RESPONSE['result'] = 'success';
     $RESPONSE['book_active'] = array();

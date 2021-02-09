@@ -6,6 +6,11 @@
 	$gdcol="gdcol1";
 	$doc="document1";
 
+	if($_REQUEST['college_id'] == 2) {
+		$gdcol = "gdcol2";
+		$doc = "document2";
+	}
+
 	$RESPONSE = array();
 	$RESPONSE['result'] = 'success';
 	$RESPONSE['document'] = array();

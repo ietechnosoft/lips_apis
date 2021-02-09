@@ -5,6 +5,11 @@
     include_once("../../../connect.php");
     $gdcol="gdcol1";
     $download="download1";
+    
+    if($_REQUEST['college_id'] == 2) {
+		$gdcol = "gdcol2";
+        $download = "download2";
+	}
 
     $RESPONSE = array();
     $RESPONSE['result'] = "success";

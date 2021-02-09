@@ -7,6 +7,12 @@
 	$college="1";
 	$gdcol="gdcol1";
 
+	if($_REQUEST['college_id'] == "2") {
+		$fees = "fee_structure2";
+		$college = "2";
+		$gdcol = "gdcol2";
+	}
+
 	$f_id = $_REQUEST['f_id'];
 	$sem = $_REQUEST['sem'];
 	

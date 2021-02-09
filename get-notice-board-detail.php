@@ -7,6 +7,11 @@
 	$notice="notice1";
 	$col="LIPS";
 
+			if ($_REQUEST['college_id'] == "2") {
+					$notice = "notice2";
+					$fees = "fee_structure2";
+					$col = "LWTTC";
+			}
 
 	$p1=mysqli_query($con,"select * from $notice where n_id='$_REQUEST[n_id]'");
 	$n=mysqli_fetch_row($p1);

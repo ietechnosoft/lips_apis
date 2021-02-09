@@ -7,6 +7,13 @@
 	$college="1";
 	$gdcol="gdcol1";
 
+	if ($_REQUEST['college_id'] == "2") {
+		$fees = "fee_structure2";
+		$college = "2";
+		$gdcol = "gdcol2";
+	}
+	
+
 	$RESPONCE = array();
 	$RESPONCE['result'] = "success";
 	$RESPONCE['total_lecture_count'] = (int) 0;

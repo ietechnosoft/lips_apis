@@ -11,6 +11,18 @@
 	$led="ledger_accounts1";
 	$name="lips";
 	$college="1";
+	
+	if($_REQUEST['college_id'] == 2 )
+	{
+		$fees="fee_structure2";
+		$gdcol="gdcol2";
+		$receipt="receipt2";
+		$recparti="recparti2";
+		$transaction="transaction2";
+		$led="ledger_accounts2";
+		$name="lwttc";
+		$college="2";
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">

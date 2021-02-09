@@ -5,6 +5,11 @@
     include_once("../../../connect.php");
     $gdcol="gdcol1";
 
+
+if ($_REQUEST['college_id'] == "2") {
+    $gdcol = "gdcol2";
+}
+
     $RESPONSE = array();
     $RESPONSE['result'] = "success";
 

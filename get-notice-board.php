@@ -6,6 +6,13 @@
 	$fees="fee_structure1";
 	$notice="notice1";
 	$gdcol="gdcol1";
+
+if ($_REQUEST['college_id'] == "2") {
+	$notice = "notice2";
+	$fees = "fee_structure2";
+	$gdcol = "gdcol2";
+}
+
 	$f[0] = $_REQUEST['f_id'];
 	
 	$RESPONCE = array();

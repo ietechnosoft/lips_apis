@@ -17,6 +17,22 @@
 	$college="1";
 	$tempreceipt="tempreceipt1";
 
+	if ($_REQUEST['college_id'] == "2") {
+		$grpmas = "group_master2";
+		$leddet = "ledger_details2";
+		$payment = "payment_transaction2";
+		$fees = "fee_structure2";
+		$gdcol = "gdcol2";
+		$receipt = "receipt2";
+		$recparti = "recparti2";
+		$transaction = "transaction2";
+		$led = "ledger_accounts2";
+		$recname = "LWTTC";
+		$msgapi = mysqli_fetch_row(mysqli_query($con1, "select * from msgpack where mid=2"));
+		$college = "2";
+		$tempreceipt = "tempreceipt2";
+	}
+
 	$sId = $_GET['s_id'];
 	
 	$userid=$msgapi[1];
