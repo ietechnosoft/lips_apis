@@ -4,10 +4,12 @@
     $_SESSION['cursession'] = $_REQUEST['college_session'];
     include_once("../../../connect.php");
     $gdcol="gdcol1";
+    $fees = "fee_structure1";
 
 
 if ($_REQUEST['college_id'] == "2") {
     $gdcol = "gdcol2";
+    $fees = "fee_structure2";
 }
 
     $RESPONSE = array();
@@ -31,6 +33,11 @@ if ($_REQUEST['college_id'] == "2") {
     $RESPONSE['state'] = trim(str_replace('  ', ' ', str_replace('\t', '', $d[10])));
     $RESPONSE['mobile1'] = $d[27];
     $RESPONSE['mpbile2'] = $d[28];
+
+    $f = mysqli_fetch_row(mysqli_query($con, "select batchyear,course,yearwise from $fees where f_id='$d[33]'"));
+    $RESPONSE['batch'] = $f[0];
+    $RESPONSE['course'] = $f[1];
+    $RESPONSE['year'] = $f[2];
 
     echo json_encode($RESPONSE);
 ?>
