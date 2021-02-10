@@ -7,10 +7,10 @@
     $fees = "fee_structure1";
 
 
-if ($_REQUEST['college_id'] == "2") {
-    $gdcol = "gdcol2";
-    $fees = "fee_structure2";
-}
+    if ($_REQUEST['college_id'] == "2") {
+        $gdcol = "gdcol2";
+        $fees = "fee_structure2";
+    }
 
     $RESPONSE = array();
     $RESPONSE['result'] = "success";
