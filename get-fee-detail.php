@@ -167,7 +167,7 @@
                     <div class="row">
 						<div class="panel panel-default">
                                 <div class="panel-body" style="padding:0 !important; margin:0 !important;">
-									 <div class="table">
+									 <div class="table" style="width:100%;">
                                         <table class="table table-bordered table-striped">
                                             <thead>
 												<?php
@@ -207,7 +207,7 @@
 														echo "<td style='text-align:right;'>&nbsp;</td>";
 													}
 													echo "<td style='text-align:right;'>".number_format($bal,2)."</td>";
-													echo "<td></td>";
+													// echo "<td></td>";
  												?>
 											</tr>
 												<?php
@@ -226,7 +226,7 @@
 													{
 												?>
                                                 <tr id="<?php echo $j; ?>">
-                                                    <td><?php $date= DateTime::createFromFormat('Y-m-d', $d[1]); echo $date->format('d-m Y'); ?></td>
+                                                    <td width="5%"><?php $date= DateTime::createFromFormat('Y-m-d', $d[1]); echo $date->format('d-m Y'); ?></td>
                                                     <td><?php echo $d[4]; ?></td>
                                                     <?php
 														if($d[5]=="Cr.")
