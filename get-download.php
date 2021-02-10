@@ -19,6 +19,7 @@
     $d1=mysqli_query($con,"select * from $download where f_id like '$_REQUEST[f_id],%' or f_id like '%,$$_REQUEST[f_id],%' or f_id like '%,$_REQUEST[f_id]' or f_id like '$_REQUEST[f_id]'  order by d_id desc");
     
     while($d=mysqli_fetch_row($d1)) {
+        $downloadFile['id'] = (int) $d[0];
         $downloadFile['file_name'] = $d[1];
         $downloadFile['file_path'] = $d[2];
         $downloadFile['subject'] = $d[4];

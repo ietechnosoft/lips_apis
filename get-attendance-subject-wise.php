@@ -27,9 +27,11 @@
 	$date= DateTime::createFromFormat('Y-m-d', $dfrom);
 	$date1= DateTime::createFromFormat('Y-m-d', $dto);
 
-	$f=mysqli_fetch_row(mysqli_query($con,"select batchyear,course,yearwise from $fees where f_id ='$_REQUEST[f_id]'"));
+	$stsb=mysqli_fetch_row(mysqli_query($con,"select TRIM(BOTH ',' FROM subjects) from $gdcol where s_id ='$_REQUEST[s_id]'"));
 
-	$sub1=mysqli_query($con,"select * from subject_list where college='$college' and f_id='$_REQUEST[f_id]' and sem='$_REQUEST[sem]' and status=1 order by s_id");
+
+	// echo "select * from subject_list where college='$college' and f_id='$_REQUEST[f_id]' and sem='$_REQUEST[sem]' and status=1 order by s_id";
+	$sub1=mysqli_query($con,"select * from subject_list where college='$college' and s_id in ($stsb[0]) and f_id='$_REQUEST[f_id]' and sem='$_REQUEST[sem]' and status=1 order by s_id");
 	$totalLectureCount = 0;
 	$totalAttendedCount = 0;
 	while($sub=mysqli_fetch_row($sub1)) {
