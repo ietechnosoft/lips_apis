@@ -179,8 +179,7 @@
                                                 <tr>
                                                     <th>Date</th>
                                                     <th>Particulars</th>
-													<th>Credit</th>
-													<th>Debit</th>
+													<th>Transaction</th>
 													<th>Balance</th>
                                                 </tr>
                                             </thead>
@@ -195,16 +194,14 @@
 												<?php
 													if($n[1]>0)
 													{
-														$n[1]=number_format($n[1],2);
-														echo "<td style='text-align:right;'>&nbsp;</td>";		
-														echo "<td style='text-align:right;'>$n[1]</td>";
+														$n[1]=number_format($n[1],2); 	
+														echo "<td style='text-align:right; color: green;'>$n[1]</td>";
 													}
 													else
 													{
 														$n[1]=$n[1]-($n[1]*2);
 														$n[1]=number_format($n[1],2);
-														echo "<td style='text-align:right;'>$n[1]</td>";
-														echo "<td style='text-align:right;'>&nbsp;</td>";
+														echo "<td style='text-align:right;  color: red;'>$n[1]</td>"; 
 													}
 													echo "<td style='text-align:right;'>".number_format($bal,2)."</td>";
 													// echo "<td></td>";
@@ -226,21 +223,19 @@
 													{
 												?>
                                                 <tr id="<?php echo $j; ?>">
-                                                    <td width="5%"><?php $date= DateTime::createFromFormat('Y-m-d', $d[1]); echo $date->format('d-m Y'); ?></td>
+                                                    <td nowrap><?php $date= DateTime::createFromFormat('Y-m-d', $d[1]); echo $date->format('d-m Y'); ?></td>
                                                     <td><?php echo $d[4]; ?></td>
                                                     <?php
 														if($d[5]=="Cr.")
 														{
 															$bal=$bal-$d[3];			
 															$d[3]=number_format($d[3],2);				
-															echo "<td style='text-align:right; color: red;'>$d[3]</td>";
-															echo "<td>&nbsp;</td>";
+															echo "<td style='text-align:right; color: red;'>$d[3]</td>"; 
 														}
 														else
 														{
 															$bal=$bal+$d[3];			
-															$d[3]=number_format($d[3],2);								
-															echo "<td>&nbsp;</td>";
+															$d[3]=number_format($d[3],2);
 															echo "<td style='text-align:right; color: green;'>$d[3]</td>";
 														}
 														if($bal >= 0) $color = "green"; else $color = "red";
