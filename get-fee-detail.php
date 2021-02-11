@@ -244,10 +244,10 @@
 
 														if (strpos($d[6], "P") !== false) {
 															$no = substr($d[6], 1);
-															echo "<td><a href='get-fee-prop.php?recno=$no&sess=$d[7]&college_id=$_REQUEST[college_id]' target='_blank'>Click Here</a></td>";
+															echo "<td><a href='get-fee-prop.php?recno=$no&sess=$d[7]&college_id=$_REQUEST[college_id]' target='_blank'><i class='fa fa-print'></i></a></td>";
 														} else if (strpos($d[6], "R") !== false && !(strpos($d[4], "Extra Fees") !== false)) {
 															$no = substr($d[6], 1);
-															echo "<td><a href='get-fee-receipt.php?recno=$no&sess=$d[7]&college_id=$_REQUEST[college_id]' target='_blank'>Click Here</a></td>";
+															echo "<td><a href='get-fee-receipt.php?recno=$no&sess=$d[7]&college_id=$_REQUEST[college_id]' target='_blank'><i class='fa fa-print'></a></td>";
 														} else {
 															echo "<td></td>";
 														}
