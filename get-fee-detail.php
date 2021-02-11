@@ -181,6 +181,7 @@
                                                     <th>Particulars</th>
 													<th>Transaction</th>
 													<th>Balance</th>
+													<th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -204,7 +205,7 @@
 														echo "<td style='text-align:right;  color: red;'>$n[1]</td>"; 
 													}
 													echo "<td style='text-align:right;'>".number_format($bal,2)."</td>";
-													// echo "<td></td>";
+													echo "<td></td>";
  												?>
 											</tr>
 												<?php
@@ -240,6 +241,16 @@
 														}
 														if($bal >= 0) $color = "green"; else $color = "red";
 														echo "<td  style='text-align:right; color: ".$color." '>".number_format($bal,2)."</td>";
+
+														if (strpos($d[6], "P") !== false) {
+															$no = substr($d[6], 1);
+															echo "<td><a href='get-fee-prop.php?recno=$no&sess=$d[7]&college_id=$_REQUEST[college_id]' target='_blank'>Click Here</a></td>";
+														} else if (strpos($d[6], "R") !== false && !(strpos($d[4], "Extra Fees") !== false)) {
+															$no = substr($d[6], 1);
+															echo "<td><a href='get-fee-receipt.php?recno=$no&sess=$d[7]&college_id=$_REQUEST[college_id]' target='_blank'>Click Here</a></td>";
+														} else {
+															echo "<td></td>";
+														}
  													?>
 													
                                                 </tr>
