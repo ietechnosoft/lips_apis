@@ -6,7 +6,7 @@
 
     $RESPONSE = array();
 
-    $d1=mysqli_query($con1,"select device_id from app_user_auth where user_id='$_REQUEST[s_id]' and user_type='$_REQUEST[user_type] and college_id='$_REQUEST[college_id]' ");
+    $d1=mysqli_query($con1,"select device_id from app_user_auth where user_id='$_REQUEST[s_id]' and user_type='$_REQUEST[user_type]' and college_id='$_REQUEST[college_id]' ");
     
     if(mysqli_num_rows($d1) == 0) {
         $RESPONSE['result'] = "success";
